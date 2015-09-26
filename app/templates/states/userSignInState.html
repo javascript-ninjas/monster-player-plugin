@@ -1,17 +1,32 @@
-<div id="user-sign-in-panel" class="jumbotron" ng-controller="UserSignInController">
-    <form ng-submit="signIn()">
+<div class="jumbotron" ng-controller="UserSignInController">
+    <h1 class="display-2">Sign In</h1>
+
+    <hr class="m-y-md">
+
+    <form name="userSignIn" ng-submit="signIn()">
         <fieldset class="form-group">
-            <label>Login
-                <input type="password" class="form-control" placeholder="Login">
+            <label>E-mail
+                <input type="text" class="form-control" name="email" ng-model="email" ng-require="true" ng-minlength="3">
             </label>
+
+            <div role="alert">
+                <span class="label label-pill label-danger" ng-show="userSignIn.email.$error.required">Required!</span>
+                <span class="label label-pill label-danger" ng-show="userSignIn.email.$error.minlength">Min limit!</span>
+            </div>
         </fieldset>
 
         <fieldset class="form-group">
             <label>Password
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" name="password" ng-model="password" ng-require="true" ng-minlength="3">
             </label>
+    
+            <div role="alert">
+                <span class="label label-pill label-danger" ng-show="userSignIn.password.$error.required">Required!</span>
+                <span class="label label-pill label-danger" ng-show="userSignIn.password.$error.minlength">Min limit!</span>
+            </div>
         </fieldset>
 
         <button type="submit" class="btn btn-primary">SignIn</button>
+        <button type="submit" class="btn btn-success" ui-sref="user-sign-up">SignUp</button>
     </form>
 </div>

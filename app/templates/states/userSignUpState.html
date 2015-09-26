@@ -1,23 +1,50 @@
-<div id="user-sign-up-panel" class="jumbotron">
-    <form ng-submit="signUp()">
+<div class="jumbotron" ng-controller="UserSignUpController">
+    <h1 class="display-2">Sign Up</h1>
+
+    <hr class="m-y-md">
+
+    <form name="userSignUp" ng-submit="signUp()">
         <fieldset class="form-group">
-            <label>Login
-                <input type="password" class="form-control" placeholder="Login">
+            <label>Name
+                <input type="text" class="form-control" name="username" ng-model="username" ng-require="true" ng-minlength="3">
             </label>
         </fieldset>
+
+        <div role="alert">
+            <span class="label label-pill label-danger" ng-show="userSignUp.username.$error.required">Required!</span>
+        </div>
 
         <fieldset class="form-group">
             <label>Password
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" name="password" ng-model="password" ng-require="true" ng-minlength="3">
             </label>
         </fieldset>
+
+        <div role="alert">
+            <span class="label label-pill label-danger" ng-show="userSignUp.password.$error.required">Required!</span>
+        </div>
 
         <fieldset class="form-group">
-            <label>Re-Password
-                <input type="password" class="form-control" placeholder="Re-Password">
+            <label>Repeat password
+                <input type="password" class="form-control" name="repassword" ng-model="repassword" ng-require="true" ng-minlength="3">
             </label>
         </fieldset>
 
+        <div role="alert">
+            <span class="label label-pill label-danger" ng-show="userSignUp.repassword.$error.required">Required!</span>
+        </div>
+
+        <fieldset class="form-group">
+            <label>E-mail
+                <input type="text" class="form-control" name="email" ng-model="email" ng-require="true" ng-minlength="3">
+            </label>
+        </fieldset>
+
+        <div role="alert">
+            <span class="label label-pill label-danger" ng-show="userSignUp.email.$error.required">Required!</span>
+        </div>
+
         <button type="submit" class="btn btn-primary">SignUp</button>
+        <button type="submit" class="btn btn-success" ui-sref="user-sign-in">SignIn</button>
     </form>
 </div>

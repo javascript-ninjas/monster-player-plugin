@@ -1,9 +1,5 @@
-<div
-        class="alert"
-        ng-class="{
-                'alert-success': user.status === 'success',
-                'alert-danger': user.status === 'error'
-            }"
-        ng-bind="user.description"
-        >
+<div ng-show="isDisplayMessage">
+    <div class="alert alert-{{ status }}">
+        {{ body }}
+    </div>
 </div>

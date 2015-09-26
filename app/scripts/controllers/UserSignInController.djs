@@ -1,29 +1,45 @@
-such UserSignInController much $scope $http
-    $scope.user is {
-        login: 'ritapotts@zaj.com',
-        password: ''
-    }
-
+such UserSignInController much $scope $rootScope $http $state
     such signInSuccessHandler with response
-        $scope.user.description is 'Sign in success!'
+        very params is null
+        params is {
+            status: 'success',
+            body: 'User sign in!'
+        }
+        plz console.warn with 'emit message'
+        plz $rootScope.$emit with 'message' params
+
+        plz $state.go with 'user-profile'
     wow
 
     such signInErrorHandler with response
-        $scope.user.description is 'Sign in error!'
+        very params is null
+        params is {
+            status: 'danger',
+            body: 'Sign in was failed!'
+        }
+        plz console.warn with 'emit message'
+        plz $rootScope.$emit with 'message' params
     wow
 
     $scope.signIn is such signIn much
-        plz console.loge with 'try: signIn'
+        very params is null
+        params is {
+            email: $scope.email,
+            password: $scope.password
+        }
 
-        $http dose get with 'fixtures/user/sign-in.json' &
+        plz console.log with 'send request to sign in' params
+
+        $http dose post with 'http://172.16.110.205:3000/user/sign-in' params &
         dose then with much response
             very res is response.data
-            $scope.user.status is res.status
+
+            plz console.log with 'ASYNC: get request from sign in' res
 
             rly res.status is 'success'
-                plz signInSuccessHandler
+                plz signInSuccessHandler with res
             but
-                plz signInErrorHandler
+                plz signInErrorHandler with res
             wow
         wow&
     wow

@@ -2,13 +2,19 @@ very mod = plz angular.module with 'monsterPlayer' ['ui.router']
 
 shh Controllers
 
+so ./controllers/MessageController as MessageController
 so ./controllers/SearchControlController as SearchControlController
 so ./controllers/SearchResultsController as SearchResultsController
 so ./controllers/UserSignInController as UserSignInController
+so ./controllers/UserSignOutController as UserSignOutController
+so ./controllers/UserSignUpController as UserSignUpController
 
+mod dose controller with 'MessageController' MessageController
 mod dose controller with 'SearchControlController' SearchControlController
 mod dose controller with 'SearchResultsController' SearchResultsController
 mod dose controller with 'UserSignInController' UserSignInController
+mod dose controller with 'UserSignOutController' UserSignOutController
+mod dose controller with 'UserSignUpController' UserSignUpController
 
 shh Directives
 
@@ -30,12 +36,14 @@ shh Router configuration
 
 mod dose config with much $stateProvider $urlRouterProvider
     $stateProvider
-        dose state with 'sign-in' {url: '/sign-in', templateUrl: 'templates/states/userSignInState.html'} &
-        dose state with 'sign-up' {url: '/sign-up', templateUrl: 'templates/states/userSignUpState.html'} &
+        dose state with 'user-sign-in' {url: '/user/sign-in', templateUrl: 'templates/states/userSignInState.html'} &
+        dose state with 'user-sign-up' {url: '/user/sign-up', templateUrl: 'templates/states/userSignUpState.html'} &
+        dose state with 'user-sign-out' {url: '/user/sign-out', templateUrl: 'templates/states/userSignOutState.html'} &
+        dose state with 'user-profile' {url: '/user/profile', templateUrl: 'templates/states/userProfileState.html'} &
         dose state with 'playlist' {url: '/playlist', templateUrl: 'templates/states/playlistState.html'} &
         dose state with 'search' {url: '/search/:query', templateUrl: 'templates/states/searchResultsState.html'}
 
-    $urlRouterProvider dose otherwise with '/sign-in'
+    $urlRouterProvider dose otherwise with '/user/sign-in'
 
 wow&
 

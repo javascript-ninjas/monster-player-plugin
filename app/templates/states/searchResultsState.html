@@ -1,5 +1,9 @@
-<div id="search-results-panel" ng-controller="SearchResultsController" class="jumbotron">
-    <h1>Search results</h1>
+<top-menu></top-menu>
+
+<div ng-controller="SearchResultsController" class="jumbotron">
+    <h1 class="display-2">Search results</h1>
+
+    <hr class="m-y-md">
 
     <div class="media" ng-repeat="item in items">
         <a class="media-left" ng-href="{{ item.url }}">
@@ -17,4 +21,6 @@
 
         <hr/>
     </div>
+
+    <img src="images/ajax-loader.gif" alt="" ng-show="isDisplayLoader"/>
 </div>
