@@ -6,7 +6,7 @@ such SearchControlController much $scope $rootScope $state search
             return
         wow
 
-        plz $state.go with 'search' {query: $scope.query} {location: true, reload: true}
+        plz $state.go with 'search' {query: $scope.query} {reload: true}
         plz search.find with $scope.query much items
             plz $rootScope.$emit with 'search-results' items
         wow&

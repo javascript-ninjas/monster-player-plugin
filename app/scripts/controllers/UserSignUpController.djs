@@ -1,4 +1,4 @@
-such UserSignUpController much $scope $http $state
+such UserSignUpController much $scope $rootScope $http $state
     $scope.user is {
         name: '',
         password: '',
@@ -7,13 +7,27 @@ such UserSignUpController much $scope $http $state
     }
 
     such signUpSuccessHandler much response
-        plz console.log with 'ok' response
-
         plz $state.go with 'user-profile'
+
+        very params is null
+        params is {
+            status: 'success',
+            body: 'User sign up!'
+        }
+
+        plz console.warn with 'emit message' params
+        plz $rootScope.$emit with 'message' params
     wow
 
     such signUpErrorHandler much response
-        plz console.log with 'error' response
+        very params is null
+        params is {
+            status: 'danger',
+            body: 'Sign up was failed!'
+        }
+
+        plz console.warn with 'emit message'
+        plz $rootScope.$emit with 'message' params
     wow
 
     $scope.signUp is such signUp much
