@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "monster-player-plugin",
+  "description": "",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "./app/images/monster-player.png",
+    "default_popup": "./app/index.html"
+  },
+
+  "icons": {
+    "16": "./app/images/monster-player.png",
+    "48": "./app/images/monster-player.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ]
+}

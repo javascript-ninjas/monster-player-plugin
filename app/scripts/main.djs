@@ -54,3 +54,5 @@ wow&
 shh Go go go!!1
 
 plz angular.bootstrap with document ['monsterPlayer']
+
+plz console.log with 'Go go go!!1'
