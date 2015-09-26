@@ -2,18 +2,45 @@
 <html>
 <head>
     <title>monster-player-plugin</title>
-</head>
-<body>
-    <div id="app">
-        <div ng-controller="UserController">
-            <form ng-submit="signIn()">
-                <input type="text" name="login" ng-model="login"/>
-                <input type="text" name="password" ng-model="password"/>
-                <input type="submit" value="Sign in"/>
-            </form>
-        </div>
-    </div>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles/vendor/bootstrap.css"/>
     <script src="scripts/vendor/angular.js"></script>
     <script src="dist/bundle.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <div ng-controller="UserController">
+            <div id="user-login-panel" class="jumbotron">
+                <form ng-submit="signIn()">
+                    <input type="text" name="login" ng-model="login"/>
+                    <input type="text" name="password" ng-model="password"/>
+                    <input type="submit" value="Sign in"/>
+                </form>
+            </div>
+
+            <div
+                class="alert"
+                ng-class="{
+                    'alert-success': user.status === 'success',
+                    'alert-danger': user.status === 'error'
+                }"
+                ng-cloak
+            >
+            {{ user.description }}
+            </div>
+
+            <div id="user-profile-panel" class="jumbotron">
+                <div class="media">
+                    <a class="media-left" href="#">
+                        <img class="media-object" data-src="http://beerhold.it/579/300" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading" nd-model="user.name"></h4>
+                        User description...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

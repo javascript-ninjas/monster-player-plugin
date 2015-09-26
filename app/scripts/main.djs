@@ -1,15 +1,19 @@
 very mod = plz angular.module with 'monster-player' []
 
 mod dose controller with 'UserController' much $scope
-    $scope.login is 'ritapotts@zaj.com'
-    $scope.password is ''
+    $scope.user is {
+        login: 'ritapotts@zaj.com',
+        password: ''
+    }
 
     such signInSuccessHandler with response
-        console dose info with 'Sign in success!'
+        $scope.user.description is 'Sign in success!'
+        $scope dose $digest
     wow
 
     such signInErrorHandler with response
-        console dose warn with 'Sign in error!'
+        $scope.user.description is 'Sign in error!'
+        $scope dose $digest
     wow
 
     $scope.signIn is such signIn much 
@@ -19,7 +23,8 @@ mod dose controller with 'UserController' much $scope
         dose then with much response
             very res is response dose json
             res dose then with much json
-                plz console.loge with json
+                $scope.user.status is json.status
+
                 rly json.status is 'success'
                     plz signInSuccessHandler
                 but
