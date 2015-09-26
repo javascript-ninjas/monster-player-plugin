@@ -1,1 +1,1 @@
-plz console.log with 1, 2, 3, 4
+plz console.log with angular
