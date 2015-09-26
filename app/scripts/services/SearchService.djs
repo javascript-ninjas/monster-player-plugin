@@ -1,4 +1,6 @@
 such SearchService much $http
+    very self is this
+
     this.find is such find much query cb
         plz console.log with 'SearchService#find'
 
@@ -6,7 +8,7 @@ such SearchService much $http
 
         $http dose get with url &
         dose then with much response
-            plz cb with response.data
+            plz cb with response.data.items
         wow&
     wow
 wow

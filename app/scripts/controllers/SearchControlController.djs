@@ -1,12 +1,10 @@
-such SearchControlController much $scope $state search
-    $scope.query is 'asd'
+such SearchControlController much $scope $rootScope $state search
+    $scope.query is 'piecioshka'
 
     $scope.search is such
-        console dose log with 'search: ' $scope.query
         plz $state.go with 'search', {query: $scope.query}
-
-        search dose find with $scope.query much results
-            plz console.warn with results.items
+        plz search.find with $scope.query much items
+            plz $rootScope.$emit with 'search-results' items
         wow&
     wow
 wow
