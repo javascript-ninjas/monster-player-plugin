@@ -1,39 +1,19 @@
-very mod = plz angular.module with 'monster-player' []
+very mod = plz angular.module with 'monster-player' ['ui.router']
 
-mod dose controller with 'UserController' much $scope
-    $scope.user is {
-        login: 'ritapotts@zaj.com',
-        password: ''
-    }
+so ./controllers/UserSignInController as UserSignInController
+so ./directives/TopMenuDirective as TopMenuDirective
 
-    such signInSuccessHandler with response
-        $scope.user.description is 'Sign in success!'
-        $scope dose $digest
-    wow
+mod dose controller with 'userSignInController' UserSignInController
+mod dose directive with 'topMenu' TopMenuDirective
 
-    such signInErrorHandler with response
-        $scope.user.description is 'Sign in error!'
-        $scope dose $digest
-    wow
+mod dose config with much $stateProvider $urlRouterProvider
+    $stateProvider
+        dose state with 'sign-in' {url: '/sign-in', templateUrl: 'templates/states/userSignInState.html'} &
+        dose state with 'sign-up' {url: '/sign-up', templateUrl: 'templates/states/userSignUpState.html'} &
+        dose state with 'playlist' {url: '/playlist', templateUrl: 'templates/states/playlistState.html'} &
+        dose state with 'search' {url: '/search', templateUrl: 'templates/states/searchResultsState.html'}
 
-    $scope.signIn is such signIn much 
-        plz console.loge with 'try: signIn'
-
-        plz fetch with 'fixtures/user/sign-in.json'&
-        dose then with much response
-            very res is response dose json
-            res dose then with much json
-                $scope.user.status is json.status
-
-                rly json.status is 'success'
-                    plz signInSuccessHandler
-                but
-                    plz signInErrorHandler
-                wow
-            wow&
-        wow&
-    wow
+    $urlRouterProvider dose otherwise with '/sign-in'
 wow&
 
 plz angular.bootstrap with document ['monster-player']
-
