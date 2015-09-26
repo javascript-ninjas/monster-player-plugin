@@ -1,6 +1,6 @@
 module.exports = {
     resolve: {
-        extensions: ['.djs', '.js']
+        extensions: ['.djs', '.js', '']
     },
     entry: './app/scripts/main',
     output: {

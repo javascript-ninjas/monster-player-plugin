@@ -4,7 +4,15 @@
     <title>monster-player-plugin</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <div ng-controller="UserController">
+            <form ng-submit="signIn()">
+                <input type="text" name="login" ng-model="login"/>
+                <input type="text" name="password" ng-model="password"/>
+                <input type="submit" value="Sign in"/>
+            </form>
+        </div>
+    </div>
     <script src="scripts/vendor/angular.js"></script>
     <script src="dist/bundle.js"></script>
 </body>
