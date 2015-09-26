@@ -6,6 +6,12 @@ such SearchResultsController much $scope $rootScope $state search
         $scope.items is items
         $scope.isDisplayLoader is false
     wow&
+
+    rly $state.params.query
+        plz search.find with $state.params.query much items
+            plz $rootScope.$emit with 'search-results' items
+        wow&
+    wow
 wow
 
 module.exports is SearchResultsController
