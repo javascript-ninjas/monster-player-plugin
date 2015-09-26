@@ -1,18 +1,18 @@
 <top-menu></top-menu>
 
-<div class="jumbotron">
+<div class="jumbotron" ng-controller="UserProfileController">
     <h1 class="display-2">Profile</h1>
 
     <hr class="m-y-md">
 
     <div class="media">
         <a class="media-left" href="#">
-            <img class="media-object" src="http://beerhold.it/100/60" alt="">
+            <img class="media-object" ng-src="{{ avatar }}" alt="">
         </a>
 
         <div class="media-body">
-            <h4 class="media-heading" nd-model="user.name"></h4>
-            User description...
+            <h4 class="media-heading">{{ name }}</h4>
+            <p>JavaScript Ninja</p>
         </div>
     </div>
 </div>
