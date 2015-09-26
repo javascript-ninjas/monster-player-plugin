@@ -5,6 +5,7 @@ shh Controllers
 so ./controllers/MessageController as MessageController
 so ./controllers/SearchControlController as SearchControlController
 so ./controllers/SearchResultsController as SearchResultsController
+so ./controllers/UserPlaylistController as UserPlaylistController
 so ./controllers/UserProfileController as UserProfileController
 so ./controllers/UserSignInController as UserSignInController
 so ./controllers/UserSignOutController as UserSignOutController
@@ -13,6 +14,7 @@ so ./controllers/UserSignUpController as UserSignUpController
 mod dose controller with 'MessageController' MessageController
 mod dose controller with 'SearchControlController' SearchControlController
 mod dose controller with 'SearchResultsController' SearchResultsController
+mod dose controller with 'UserPlaylistController' UserPlaylistController
 mod dose controller with 'UserProfileController' UserProfileController
 mod dose controller with 'UserSignInController' UserSignInController
 mod dose controller with 'UserSignOutController' UserSignOutController
