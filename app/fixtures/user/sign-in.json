@@ -1,8 +1,0 @@
-{
-    "status": "success",
-    "user": {
-        "id": "123",
-        "name": "User name :)",
-        "description": "Lorem ipsum..."
-    }
-}
