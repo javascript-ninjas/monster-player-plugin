@@ -1,7 +1,7 @@
 such TopMenuDirective
     return {
         restrict: 'E',
-        templateUrl: 'templates/topMenuDirective.html'
+        templateUrl: 'templates/directives/topMenuDirective.html'
     }
 wow
 

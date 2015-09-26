@@ -1,10 +1,30 @@
-very mod = plz angular.module with 'monster-player' ['ui.router']
+very mod = plz angular.module with 'monsterPlayer' ['ui.router']
+
+shh Controllers
 
 so ./controllers/UserSignInController as UserSignInController
-so ./directives/TopMenuDirective as TopMenuDirective
+so ./controllers/SearchControlController as SearchControlController
 
-mod dose controller with 'userSignInController' UserSignInController
+mod dose controller with 'UserSignInController' UserSignInController
+mod dose controller with 'SearchControlController' SearchControlController
+
+shh Directives
+
+so ./directives/messageDirective as MessageDirective
+so ./directives/searchControlDirective as SearchControlDirective
+so ./directives/topMenuDirective as TopMenuDirective
+
+mod dose directive with 'message' MessageDirective
+mod dose directive with 'searchControl' SearchControlDirective
 mod dose directive with 'topMenu' TopMenuDirective
+
+shh Services
+
+so ./services/SearchService as SearchService
+
+mod dose service with 'search' SearchService
+
+shh Router configuration
 
 mod dose config with much $stateProvider $urlRouterProvider
     $stateProvider
@@ -16,4 +36,6 @@ mod dose config with much $stateProvider $urlRouterProvider
     $urlRouterProvider dose otherwise with '/sign-in'
 wow&
 
-plz angular.bootstrap with document ['monster-player']
+shh Go go go!!1
+
+plz angular.bootstrap with document ['monsterPlayer']
