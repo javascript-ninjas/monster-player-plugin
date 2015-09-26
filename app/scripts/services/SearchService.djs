@@ -1,7 +1,12 @@
-such SearchService with $http
-    this.search is such
-        $http dose get with 'http://172.16.110.205:3000/search/asd' much
-            plz console.log with arguments
+such SearchService much $http
+    this.find is such find much query cb
+        plz console.log with 'SearchService#find'
+
+        very url is 'http://172.16.110.205:3000/search/' + query
+
+        $http dose get with url &
+        dose then with much response
+            plz cb with response.data
         wow&
     wow
 wow
